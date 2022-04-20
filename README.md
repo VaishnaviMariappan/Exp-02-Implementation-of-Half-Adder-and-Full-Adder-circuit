@@ -4,7 +4,7 @@
 ### AIM:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
-### Equipments Required:
+### EQUIPMENT'S REQUIRED:
 Hardware – PCs, Cyclone II , USB flasher
 Software – Quartus prime
 Theory
@@ -29,26 +29,55 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 
 #### Figure -02 FULL ADDER 
 
-### Procedure
+### PROCEDURE:
 
-Connect the supply (+5V) to the circuit
-Switch ON the main switch
-If the output is 1, then the led glows.
-### 
-Program:
-/*
+1. Connect the supply (+5V) to the circuit
+2. Switch ON the main switch
+3. If the output is 1, then the led glows.
+### PROGRAM:
+
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+Developed by: Vaishnavi M
+RegisterNumber: 212221240058
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+HALF ADDER
 
+module Adder(a,b,sum,carry);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule
 
-### TRUTH TABLE 
+FULL ADDER
+
+module FullAdder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum = ((a^b)^c);
+assign carry = ((a&b)|(b&c)|(c&a));
+endmodule
+
+## Output:
+## Half Adder:
+### Logic Symbol:
+![symbol](./symbol1.jpeg)
+### RTL Realization:
+![RTL](./output1.png)
+### Truthtable: 
+![Truthtable](./truthtable1.jpeg)
+### Timing Diagram:
+![Timing](./timeline1.jpeg)
+
+## Full Adder:
+### Logic Symbol:
+![symbol](./symbol2.jpeg)
+### RTL Realization:
+![RTL](./output2.png)
+### Truthtable: 
+![Truthtable](./truthtable2.jpeg)
+### Timing Diagram:
+![Timing](./timeline2.jpeg)
 
 ### Result:
+Thus, a half adder and full adder circuit is designed to verify its truth table in Quartus using Verilog programming.
